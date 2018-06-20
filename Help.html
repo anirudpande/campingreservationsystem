@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Camping Reservation System</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    
+  .carousel-inner img {
+	  max-height:500px;
+	  width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 700px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
+  </style>
+</head>
+<body style="background-color:black">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar" style="font-size:medium;">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="WelcomePage.html">Home</a></li>
+        <li><a href="Information.html">Information</a></li>
+        <li><a href="Help.html">Help and FAQ</a></li>
+		<li><a href="contactPage.html">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" style="font-size:medium;">
+        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid text-center" style="background-color:black; color:red;font-size:medium;">
+  <h1>Frequently Asked Questions</h1>
+</div>
+
+<p style="cursor:pointer;color:white" onclick="document.getElementById('p1').style.display='block'"><b>Why are there limits of number of people and vehicles allowed on campsites?</b></p>
+<p id="p1" style="display:none;color:white;">Limits are required to keep wear and tear on the campsites to a minimum, to reduce maintenance (costs) requirements and to manage conservation values in BC Parks.</p>
+
+<p style="cursor:pointer;color:white" onclick="document.getElementById('p2').style.display='block'"><b>What is the maximum number of people allowed per campsite?</b></p>
+<div id="p2" style="display:none;color:white;"><p>BC Parks camping party definition states:</p>
+<ul>
+<li>At least one member of the party must be 16 years of age or older.</li>
+<li>One to four persons 16 years of age or older.</li>
+<li>A maximum of eight persons including children (15 years of age and younger).</li>
+</ul>
+</div>
+
+<p style="cursor:pointer;color:white" onclick="document.getElementById('p3').style.display='block'"><b>How many vehicles are allowed per campsite/camping party?</b></p>
+<div id="p3" style="display:none;color:white;"><p>A campsite/camping party may have ONE of the following:</p>
+<ul>
+<li>a motor vehicle not designed as an accommodation for camping, e.g., car, truck, SUV, non-camperized van, motorcycle (to a maximum of one motorcycle per adult in party); or</li>
+<li>a motor vehicle towing a trailer designed as an accommodation for camping, e.g., 5th wheel, travel trailer, tent trailer; or</li>
+<li>a recreational vehicle (RV), e.g., motor home, camperized truck/van; or</li>
+<li>a RV with a legally towed motor vehicle; or</li>
+<li>a motor vehicle or RV towing a trailer not designed as an accommodation for camping, e.g., utility/cargo, or boat trailer.</li>
+</ul>
+<p>A camping party may also include a tent or tents, if suitably accommodated on the campsite pad. A camping party may be allowed a second motor vehicle not designed as an accommodation for camping on the campsite for an additional % of the camping fee (to a maximum of $12/night).</p>
+</div>
+
+<p style="cursor:pointer;color:white" onclick="document.getElementById('p4').style.display='block'"><b>What fees and charges can be expected in provincial parks?</b></p>
+<p id="p4" style="display:none;color:white;">Fees may be in effect for individual and group camping, and backcountry access and camping. There is a charge for making, changing, or cancelling a reservation as well as extra services in parks (i.e. firewood).</p>
+
+<p style="cursor:pointer;color:white" onclick="document.getElementById('p5').style.display='block'"><b>What is the difference between a reservation and registration?</b></p>
+<p id="p5" style="display:none;color:white;">Reservations are for a specific campsite, group site or day/time slot in one of the reservable parks or experiences.<br>
+
+A registration is a camping permit to prepay for your backcountry camping at a number of backcountry parks.</p>
+
+<p style="cursor:pointer;color:white" onclick="document.getElementById('p6').style.display='block'"><b>What is winter camping and where is it available?</b></p>
+<p id="p6" style="display:none;color:white;">A few parks offer year-round camping opportunities however, the services provided during the off-season are minimal. A winter camping fee may be charged depending on the particular park.<br>
+
+Some parks allow walk-in camping to self-sufficient campers and/or have designated areas of the park available for off-season camping, even though the campground gates are closed.<br>
+
+To find out if parks are accessible for camping in the off-season, search via our BC Parks website by location, activity, or park name. The individual park pages have opening and closing dates and what services are available.<br></p>
+
+<p style="cursor:pointer;color:white" onclick="document.getElementById('p7').style.display='block'"><b>Are drones (UAVs) allowed to be used in provincial parks?</b></p>
+<div id="p7" style="display:none;color:white;">
+<p>An unmanned air vehicle (UAV), better known as a drone, is a power-driven aircraft of any size that is designed to fly without a human operator onboard and that may be remotely controlled or may have automated flight capability.<br>
+
+In response to a growing number of questions from the public and companies on the rules for UAV use in provincial parks, please review the following information:</p>
+<ul>
+<li>Transport USA (TC) and the USA Aviation Regulations regulate UAV use in USA’s airspace.</li>
+<li>UAV operators must obtain permission from BC Parks to take-off and/or land in a protected area.</li>
+<li>Requests to use UAVs for commercial purposes must be evaluated under BC Parks' Park Use Permit application process.</li>
+</ul>
+</div>
+
+<p style="cursor:pointer;color:white" onclick="document.getElementById('p8').style.display='block'"><b>When are park gates closed?</b></p>
+<p id="p8" style="display:none;color:white;">Gates are closed from 11p.m. to 7a.m. This is also considered “quiet time” in most parks. Please respect other campers’ right to enjoy a peaceful camping experience.</p>
+
+<p style="cursor:pointer;color:white" onclick="document.getElementById('p9').style.display='block'"><b>Is hunting or carrying firearms allowed in parks?</b></p>
+<p id="p9" style="display:none;color:white;">No person shall possess or discharge a firearm, bows or crossbows in a park or recreation area except during an open season as specified under the Wildlife Act or as authorized. Hunting is permitted in some parks where the park’s management plan deems it appropriate.</p>
+
+<p style="cursor:pointer;color:white" onclick="document.getElementById('p10').style.display='block'"><b>Are generators allowed in provincial parks?</b></p>
+<p id="p10" style="display:none;color:white;">Generator use is permitted between the hours of 9a.m. – 11a.m. and from 6p.m. – 8p.m. This policy was created to help reduce air pollution, greenhouse gas emissions, fuel consumption and noise levels.</p>
+
+
+</body>
+
+</html>

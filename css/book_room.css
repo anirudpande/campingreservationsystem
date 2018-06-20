@@ -1,0 +1,54 @@
+.container {
+	padding: 0px 0px 20px 0px;
+	margin-left: 650px;
+}
+
+#buttons {
+	text-align: center;
+	padding: 0px 0px 25px 0px;
+}
+
+#info-msg {
+	display: none;
+	text-align: center;
+	padding: 25px 0px 25px 0px;
+	margin-left: 550px;
+	margin-right: 550px;
+}
+
+#grid {
+	padding: 5px 550px 40px 550px;
+}
+
+#timeslot-grid th {
+	text-align: center;
+	vertical-align: middle;
+}
+
+#timeslot-grid td {
+	text-align: center;
+	vertical-align: middle;
+}
+
+#room-info-table-div {
+	padding: 40px 550px 0px 550px;
+}
+
+#room-portfolio {
+	padding: 100px 0px 20px 0px;
+}
+
+#room-portfolio img {
+	max-width: 20%;
+}
+
+#room-portfolio table th {
+	text-align: center;
+	vertical-align: middle;
+}
+
+#room-portfolio table td {
+	text-align: center;
+	vertical-align: middle;
+}
+

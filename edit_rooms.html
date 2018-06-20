@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='UTF-8'>
+	        <meta name='description' content='WPL - Final Project'>
+		<meta name='author' content='Priyanka, Anirud'>
+		
+		<title>Camping Reservation System</title>
+		
+		<!-- Include the necessary CSS here-->
+		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+		<link rel='stylesheet' href='css/edit_rooms.css'>
+		
+		<!-- Include the necessary JQuery scripts here-->
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+		<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+		<script src='http://localhost:9998/Pro/js/edit_rooms.js'></script>
+		<script src='http://localhost:9998/Pro/js/userinfo.js'></script>
+		<script src='http://localhost:9998/Pro/js/logout.js'></script>
+	</head>
+	
+	<body>
+		<nav class='navbar navbar-inverse navbar-fixed-top'>
+		<div class='container-fluid'>
+		<ul class='nav navbar-nav'>
+			<li><a href='http://localhost:9998/Pro/main.html'>Search Camp</a></li>
+			<li><a href='http://localhost:9998/Pro/my_reservations.html'>My Reservations</a></li>
+			<li id='edit-rooms' class='active'><a href='http://localhost:9998/Pro/edit_rooms.html'>Edit Camps</a></li>
+		</ul>
+		<ul class='nav navbar-nav navbar-right'>
+			<p class='navbar-text' id='user-info'></p>
+			<li><a href='http://localhost:9998/Pro/WelcomePage.html' id='logout'>
+			    <span class="glyphicon glyphicon-log-out"></span> Logout</a>
+			</li>
+		</ul>
+		</div>
+		</nav>
+		
+		<div class="container">
+		<div class="row">
+		<div class="col-md-12">
+		<div class="input-group" id="adv-search">
+			<input type="text" class="form-control" placeholder="Search / Filter Criterion" />
+			<div class="input-group-btn">
+			<div class="btn-group" role="group">
+			<div class="dropdown dropdown-lg">
+			<button type="button"
+				class="btn btn-default dropdown-toggle"
+				data-toggle="dropdown"
+				aria-expanded="false">
+				<span class="caret"></span>
+			</button>
+			<div class="dropdown-menu dropdown-menu-right" role="menu">
+			<form class="form-horizontal" role="form">
+			<div class="form-group">
+			<label for="filter">Filter by</label>
+			<select class="form-control" id='search-filter'>
+				<option value="0" selected>All Search Criteria</option>
+				<option value="1">STATE</option>
+				<option value="2">CITY</option>
+				<option value="3">CAMP NAME</option>
+			</select>
+			</div>
+			<div class="form-group">
+			<label for="contain">Keywords</label>
+			<input class="form-control" id='search-keyword' type="text" />
+			</div>
+			<button type="button" id='search-button' class="btn btn-primary">
+			<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+			</button>
+			</form>
+			</div>
+                        </div>
+			</button>
+			</div>
+			</div>
+			</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		
+		<div id='buttons'>
+			<input type='button' id='add-room' class='btn btn-primary' value='Add Camp'/>
+		</div>
+
+		<div id='grid'>
+			<table class='table table-responsive table-striped table-bordered table-hover' id='search-grid'>
+			<thead>
+			<tr>
+				<th>NAME</th>
+				<th>STATE</th>
+				<th>CITY</th>
+				<th>RECREATION</th>
+			</tr>
+			</thead>
+			<!-- Placeholder to populate values -->
+			<tbody></tbody>
+			</table>
+		</div>
+	</body>
+</html>

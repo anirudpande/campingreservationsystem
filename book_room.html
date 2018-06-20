@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Camping reservation system</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+		<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js'></script>
+		<script src='http://localhost:9998/Pro/js/book_room2.js'></script>
+		<script src='http://localhost:9998/Pro/js/userinfo.js'></script>
+		<script src='http://localhost:9998/Pro/js/logout.js'></script>
+	<style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class='nav navbar-nav'>
+			<li class='active'><a href='http://localhost:9998/Pro/main.html'>Search</a></li>
+			<li><a href='http://localhost:9998/Pro/my_reservations.html'>My Reservations</a></li>
+			<li id='edit-rooms'><a href='http://localhost:9998/Pro/edit_rooms.html'>Edit Reservation</a></li>
+		</ul>
+		<ul class='nav navbar-nav navbar-right'>
+			<p class='navbar-text' id='user-info'></p>
+			<li><a href='http://localhost:9998/Pro/WelcomePage.html' id='logout'>
+			    <span class="glyphicon glyphicon-log-out"></span> Logout</a>
+			</li>
+		</ul>
+    </div>
+  </div>
+</nav>		
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4><u>Enter Reservation details here</u></h4>
+      <h4>Pick your check in date:</h4>
+		<input type='Text' id='datetimepicker'/>
+		<br>
+		<h4>Pick your check out date:</h4>
+		<input type='Text' id='datetimepicker1'/>
+		<br>
+		<h4>Pick number of slots:</h4> 
+		<select id='slotspicker'>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+		</select><br>
+		<br>
+		<h4>Price per slot: </h4>
+		<h4><p id ="price"></p></h4>
+		<br>
+		<div id='buttons'>
+			<input type='button' id='get-slots' class='btn btn-primary' value='Check for Available slots'/>
+			<br>
+			<br>
+			<input type='button' disabled id='reserve-slots' class='btn btn-success' value='Reserve Selected slots' />
+		</div>
+		
+    </div>
+
+    <div class="col-sm-9">
+      <h4><u>WELCOME</u></h4>
+      <hr>
+	  <div id='room-portfolio'>
+			<img id='room-image' alt='Room-Image' class="img-rounded img-responsive center-block" height='350px' width='450px'/>
+			<div id='room-info-table-div'>
+			</div>
+		</div>
+	  <h4>Features:</h4>
+      <p id ="features"></p>
+      <br>
+	  <h4>Geography:</h4>
+      <p id='geography'></p>
+      <br>
+	  <h4>Recreation:</h4>
+      <p id='recreation'></p>
+      <br>
+	  <h4>Facilities:</h4>
+      <p id='facilities'></p>
+      <br>
+      <h4>Leave a Comment:</h4>
+      <form role="form">
+        <div class="form-group">
+          <textarea class="form-control" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+      <br><br>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

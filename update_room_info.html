@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='UTF-8'>
+	        <meta name='description' content='WPL - Final Project'>
+		<meta name='author' content='Priyanka, Anirud'>
+		
+		<title>Camp Reservation System</title>
+		
+		<!-- Include the necessary CSS here-->
+		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css'>
+		<link rel='stylesheet' href='css/update_room_info.css'>
+		
+		<!-- Include the necessary JQuery scripts here-->
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+		<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js'></script>
+		<script src='http://localhost:9998/Pro/js/update_room_info.js'></script>
+		<script src='http://localhost:9998/Pro/js/userinfo.js'></script>
+		<script src='http://localhost:9998/Pro/js/logout.js'></script>
+	</head>
+	
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+		<ul class="nav navbar-nav">
+			<li><a href='http://localhost:9998/Pro/main.html'>Search Camps</a></li>
+			<li><a href='http://localhost:9998/Pro/my_reservations.html'>My Reservations</a></li>
+			<li id='edit-rooms' class='active'><a href='http://localhost:9998/Pro/edit_rooms.html'>Edit Camps</a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<p class='navbar-text' id='user-info'></p>
+			<li><a href='http://localhost:9998/Pro/login.html' id='logout'>
+			    <span class="glyphicon glyphicon-log-out"></span> Logout</a>
+			</li>
+		</ul>
+		</div>
+		</nav>
+		
+		<div id='room-portfolio'>
+			<img id='room-image' alt='Room-Image' class='img-rounded img-responsive center-block'/>
+			<form id='edit-form'>
+				<div class='form-group'>
+					<label for='building-name-form-input'>Camp Name</label>
+					<span id='building-span'></span>
+					<input type='text' class='form-control' id='building-name-form-input' required='required' autofocus>
+				</div>
+				<div class='form-group'>
+					<label for='room-name-form-input'>Street</label>
+					<span id='room-name-span'></span>
+					<input type='text' class='form-control' id='room-name-form-input' required='required'>
+				</div>
+				<div class='form-group'>
+					<label for='city-name-form-input'>City</label>
+					<span id='city-name-span'></span>
+					<input type='text' class='form-control' id='city-name-form-input' required='required'>
+				</div>
+				<div class='form-group'>
+					<label for='state-name-form-input'>State</label>
+					<span id='state-name-span'></span>
+					<input type='text' class='form-control' id='state-name-form-input' required='required'>
+				</div>
+				<div class='form-group'>
+					<label for='price-form-input'>Price</label>
+					<span id='price-span'></span>
+					<input type='text' class='form-control' id='price-form-input' required='required'>
+				</div>
+				<div class='form-group'>
+					<label for='room-image-form-button'>Image</label>
+					<input type='file' class='form-control-file' id='room-image-form-filebutton'>
+				</div>
+				<div class='form-group'>
+					<label for='min-occupancy-form-select'>Maximum Slots</label>
+					<span id='min-occupancy-span'></span>
+					<select class='form-control' id='min-occupancy-form-select' required='required'>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+						<option>10</option>
+					</select>
+				</div>
+				<div class='form-group'>
+					<label for='room-desc-form-textarea'>Features</label>
+					<textarea class='form-control' id='room-desc-form-textarea' rows='5'></textarea>
+				</div>
+				<div class='form-group'>
+					<label for='geography-form-textarea'>Geography</label>
+					<textarea class='form-control' id='geography-form-textarea' rows='5'></textarea>
+				</div>
+				<div class='form-group'>
+					<label for='recreation-form-textarea'>Recreation</label>
+					<textarea class='form-control' id='recreation-form-textarea' rows='5'></textarea>
+				</div>
+				<div class='form-group'>
+					<label for='facilities-form-textarea'>Facilities</label>
+					<textarea class='form-control' id='facilities-form-textarea' rows='5'></textarea>
+				</div>
+			</form>
+		</div>
+		
+		<div id='buttons'>
+			<input type='button' id='update-room' class='btn btn-primary' value='Update Camp'/>
+			<input type='button' id='delete-room' class='btn btn-danger' value='Delete Camp'/>
+		</div>
+	</body>
+</html>

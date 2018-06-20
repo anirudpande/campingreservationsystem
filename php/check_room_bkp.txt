@@ -1,0 +1,112 @@
+<?php
+	session_start ();
+	
+	$DB_conn	= '';
+	$DB_SQL		= '';
+	$DB_ResultSet	= '';
+	
+	$iIsSessionValid	= 0;
+	
+	if (isset ($_SESSION ['USERID']) && strlen ($_SESSION ['USERID']) > 0)
+	{
+		if (isset ($_SESSION ['DB_NAME']) && strlen ($_SESSION ['DB_NAME']) > 0)
+		{
+			$iIsSessionValid	= 1;
+		}
+		else
+		{
+			$iIsSessionValid	= 0;
+		}
+	}
+	else
+	{
+		$iIsSessionValid	= 0;
+	}
+	
+	if ($iIsSessionValid == 0)
+	{
+		session_destroy ();
+		
+		echo 'http://localhost:9998/Pro/login.html';
+		
+		exit ();
+	}
+	
+	if (isset ($_POST ['sStartDateTime']) && strlen ($_POST ['sStartDateTime']) > 0)
+	{
+		$iIsSessionValid = 1;
+	}
+	else
+	{
+		$iIsSessionValid = 0;
+	}
+	
+	if (isset ($_POST ['sEndDateTime']) && strlen ($_POST ['sEndDateTime']) > 0)
+	{
+		$iIsSessionValid = 1;
+	}
+	else
+	{
+		$iIsSessionValid = 0;
+	}
+	
+	// Establish DB Connectivity
+	$DB_conn	= new mysqli ('localhost', 'root','root', 'CRS', 3307);
+		
+	if ($_SERVER ['REQUEST_METHOD']	== 'POST' && $iIsSessionValid == 1)
+	{
+		$DB_SQL	= 'SELECT c.NAME,c.states,c.city FROM camping_site c, reserved_slots r WHERE r.camping_id = c.camping_id AND c.NAME="'. $_SESSION [			 'CAMP_NAME'] . '" AND ' .
+				  'c.city="' . $_SESSION ['CITY'] . '" AND c.states="' . $_SESSION ['STATE'] . '" AND ' .
+				  ' r.START_DATETIME BETWEEN '."'" . $_POST ['sStartDateTime'] ."'".' AND '."'".$_POST ['sEndDateTime']."'".' OR '.
+				  ' r.END_DATETIME BETWEEN ' ."'". $_POST ['sEndDateTime'] ."'".' AND '."'".$_POST ['sEndDateTime']."'".' OR '."'".
+				  $_POST ['sStartDateTime']."'".' BETWEEN r.START_DATETIME AND r.END_DATETIME '.' AND '.
+				  ' c.slots_available >= '.$_POST['slots'];
+				 // echo $DB_SQL;
+		$DB_ResultSet   = $DB_conn->query ($DB_SQL);
+		
+		$iTmp = 0;
+		
+		for ($iCtr = 0; $iCtr < mysqli_num_rows ($DB_ResultSet); $iCtr++)
+		{
+			$iTmp = $iTmp + 1;
+		}
+		
+		if ($iTmp > 0)
+		{
+			echo '1';
+			//echo $DB_SQL;
+		}
+		else
+		{
+			// Check for conflicting time period for the user's reservation
+			$DB_SQL	= 'SELECT c.NAME,c.states,c.city FROM camping_site c, reserved_slots r WHERE r.camping_id = c.camping_id AND'.
+						 ' r.START_DATETIME BETWEEN '."'" . $_POST ['sStartDateTime'] ."'".' AND '."'".$_POST ['sEndDateTime']."'".' OR '.
+						 ' r.END_DATETIME BETWEEN ' ."'". $_POST ['sEndDateTime'] ."'".' AND '."'".$_POST ['sEndDateTime']."'".' OR '."'".
+						$_POST ['sStartDateTime']."'".' BETWEEN r.START_DATETIME AND r.END_DATETIME '
+						. '" AND r.USERID="' . $_SESSION ['USERID'] . '"';
+			
+			$DB_ResultSet   = $DB_conn->query ($DB_SQL);
+			
+			$iTmp = 0;
+			
+			for ($iCtr = 0; $iCtr < mysqli_num_rows ($DB_ResultSet); $iCtr++)
+			{
+				$iTmp = $iTmp + 1;
+			}
+			
+			if ($iTmp > 0)
+			{
+				echo '2';
+			}
+			else
+			{
+				echo '0';
+			}
+		}
+	}
+	
+	// Close DB connectivity
+	$DB_conn->close ();
+	
+	exit ();
+?>
